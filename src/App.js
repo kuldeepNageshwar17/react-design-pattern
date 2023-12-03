@@ -2,8 +2,10 @@ import logo from "./logo.svg";
 import { RegularList } from "./RegularList";
 import { SmallPersonListItem } from "./people/SmallPersonListItem";
 import { LargePersonListItem } from "./people/LargePersonListItem";
-import "./App.css";
 import { LargeProductListItem } from "./product/LargeProductListItem";
+import { Modal } from "./Modal";
+import "./App.css";
+
 const people = [
   {
     name: "John Doe",
@@ -49,7 +51,7 @@ export default App;
 function App() {
   return (
     <>
-      <RegularList
+      {/* <RegularList
         items={people}
         resourceName="person"
         itemComponent={SmallPersonListItem}
@@ -63,7 +65,11 @@ function App() {
         items={products}
         resourceName="product"
         itemComponent={LargeProductListItem}
-      />
+      /> */}
+
+      <Modal>
+        <LargeProductListItem product={products[0]} />
+      </Modal>
     </>
   );
 }
